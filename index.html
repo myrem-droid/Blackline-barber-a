@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blacklines Barber Shop</title>
+
+    <meta name="description" content="Blacklines Barber Shop. Estilo, precisión y tradición en cada corte. Conoce nuestros servicios y reserva tu cita.">
+
+    <meta name="theme-color" content="#0f0f0f">
+
+    <title>Blacklines Barber Shop | Estilo y Precisión</title>
+
     <style>
         :root {
             --bg-dark: #0f0f0f;
@@ -24,6 +30,10 @@
             scroll-behavior: smooth;
         }
 
+        html {
+            scroll-padding-top: 100px;
+        }
+
         body {
             background-color: var(--bg-dark);
             color: var(--text-main);
@@ -31,7 +41,8 @@
             overflow-x: hidden;
         }
 
-        /* Nav */
+        /* NAVBAR */
+
         nav {
             display: flex;
             justify-content: space-between;
@@ -39,6 +50,7 @@
             padding: 18px 8%;
             background: rgba(15, 15, 15, 0.85);
             backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             position: fixed;
             width: 100%;
             top: 0;
@@ -98,11 +110,19 @@
             width: 100%;
         }
 
-        /* Hero */
+        /* HERO */
+
         header {
-            background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(15,15,15,1) 100%), 
-                        url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1600&q=80') center/cover fixed;
-            height: 100vh;
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(0,0,0,0.6) 0%,
+                    rgba(15,15,15,1) 100%
+                ),
+                url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1600&q=80')
+                center/cover fixed;
+
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -125,7 +145,8 @@
             animation: fadeInUp 1s ease-out 0.2s backwards;
         }
 
-        /* Buttons */
+        /* BUTTONS */
+
         .btn {
             display: inline-block;
             padding: 14px 35px;
@@ -154,11 +175,13 @@
             transform: translateY(-1px);
         }
 
-        /* Sections */
+        /* SECTIONS */
+
         section {
             padding: 100px 8%;
             max-width: 1300px;
             margin: auto;
+            scroll-margin-top: 80px;
         }
 
         .section-title {
@@ -183,7 +206,8 @@
             width: 100px;
         }
 
-        /* Services */
+        /* SERVICES */
+
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -248,7 +272,8 @@
             color: var(--accent);
         }
 
-        /* Gallery */
+        /* GALLERY */
+
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -302,7 +327,8 @@
             transform: translateY(0);
         }
 
-        /* Contact Section */
+        /* CONTACT */
+
         .contact-box {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -327,12 +353,14 @@
             color: var(--text-muted);
         }
 
-        /* Keyframes */
+        /* ANIMATIONS */
+
         @keyframes fadeInDown {
             from {
                 opacity: 0;
                 transform: translateY(-30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -344,11 +372,14 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
+
+        /* FOOTER */
 
         footer {
             background: #080808;
@@ -358,12 +389,147 @@
             color: var(--text-muted);
             font-size: 0.9rem;
         }
+
+        /* RESPONSIVE DESIGN */
+
+        @media (max-width: 768px) {
+
+            html {
+                scroll-padding-top: 110px;
+            }
+
+            nav {
+                padding: 15px 5%;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            nav ul {
+                gap: 18px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav ul li a {
+                font-size: 0.85rem;
+            }
+
+            header {
+                min-height: 100svh;
+                height: auto;
+                padding: 130px 20px 60px;
+                background-attachment: scroll;
+            }
+
+            .hero h1 {
+                font-size: clamp(2rem, 9vw, 3rem);
+                letter-spacing: 2px;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            section {
+                padding: 65px 5%;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 35px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 22px;
+            }
+
+            .img-container {
+                height: 210px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .gallery-item {
+                height: 240px;
+            }
+
+            .contact-box {
+                padding: 25px 18px;
+            }
+
+            .btn {
+                padding: 13px 25px;
+                font-size: 0.9rem;
+            }
+
+            .service-card:hover {
+                transform: none;
+            }
+
+            .gallery-item:hover img {
+                transform: none;
+            }
+
+            .gallery-overlay {
+                display: none;
+            }
+        }
+
+        /* SMALL PHONES */
+
+        @media (max-width: 380px) {
+
+            nav ul {
+                gap: 12px;
+            }
+
+            nav ul li a {
+                font-size: 0.78rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .service-info {
+                padding: 20px 15px;
+            }
+
+            .hero h1 {
+                letter-spacing: 1px;
+            }
+        }
+
+        /* REDUCED MOTION */
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
     </style>
 </head>
+
 <body>
+
+    <!-- NAVIGATION -->
 
     <nav>
         <a href="#" class="logo">Black<span>lines</span></a>
+
         <ul>
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#servicios">Servicios</a></li>
@@ -372,83 +538,196 @@
         </ul>
     </nav>
 
+    <!-- HERO -->
+
     <header id="inicio">
         <div class="hero">
+
             <h1>Blacklines Barber Shop</h1>
+
             <p>Estilo, precisión y tradición en cada corte.</p>
-            <a href="#contacto" class="btn">Reserva tu Cita</a>
+
+            <a href="#contacto" class="btn">
+                Reserva tu Cita
+            </a>
+
         </div>
     </header>
 
+    <!-- SERVICES -->
+
     <section id="servicios">
+
         <h2 class="section-title">Nuestros Servicios</h2>
+
         <div class="services-grid">
+
             <div class="service-card">
+
                 <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=600&q=80" alt="Corte de Pelo">
+                    <img
+                        src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=600&q=80"
+                        alt="Corte de pelo clásico y moderno"
+                        loading="lazy"
+                    >
                 </div>
+
                 <div class="service-info">
+
                     <h3>Corte Clásico / Moderno</h3>
-                    <p>Asesoría de imagen, lavado y peinado con productos premium.</p>
+
+                    <p>
+                        Asesoría de imagen, lavado y peinado
+                        con productos premium.
+                    </p>
+
                     <div class="price">$15.000</div>
+
                 </div>
             </div>
 
             <div class="service-card">
+
                 <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=600&q=80" alt="Perfilado de Barba">
+                    <img
+                        src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=600&q=80"
+                        alt="Perfilado profesional de barba"
+                        loading="lazy"
+                    >
                 </div>
+
                 <div class="service-info">
+
                     <h3>Perfilado de Barba</h3>
-                    <p>Ritual de toalla caliente, perfilado a navaja y aceites hidratantes.</p>
+
+                    <p>
+                        Ritual de toalla caliente, perfilado
+                        a navaja y aceites hidratantes.
+                    </p>
+
                     <div class="price">$10.000</div>
+
                 </div>
             </div>
 
             <div class="service-card">
+
                 <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=600&q=80" alt="Servicio Completo">
+                    <img
+                        src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=600&q=80"
+                        alt="Servicio completo de barbería"
+                        loading="lazy"
+                    >
                 </div>
+
                 <div class="service-info">
+
                     <h3>Servicio Blacklines</h3>
-                    <p>Corte de cabello + servicio completo de barba + mascarilla facial.</p>
+
+                    <p>
+                        Corte de cabello + servicio completo
+                        de barba + mascarilla facial.
+                    </p>
+
                     <div class="price">$22.000</div>
+
                 </div>
             </div>
+
         </div>
     </section>
+
+    <!-- GALLERY -->
 
     <section id="galeria">
+
         <h2 class="section-title">Galería</h2>
+
         <div class="gallery-grid">
+
             <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=600&q=80" alt="Local">
-                <div class="gallery-overlay"><span>Estudio</span></div>
+
+                <img
+                    src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=600&q=80"
+                    alt="Interior del estudio de barbería"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+                    <span>Estudio</span>
+                </div>
+
             </div>
+
             <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=600&q=80" alt="Herramientas">
-                <div class="gallery-overlay"><span>Herramientas</span></div>
+
+                <img
+                    src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=600&q=80"
+                    alt="Herramientas profesionales de barbería"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+                    <span>Herramientas</span>
+                </div>
+
             </div>
+
             <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?auto=format&fit=crop&w=600&q=80" alt="Corte">
-                <div class="gallery-overlay"><span>Detalle</span></div>
+
+                <img
+                    src="https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?auto=format&fit=crop&w=600&q=80"
+                    alt="Detalle de un corte de cabello"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+                    <span>Detalle</span>
+                </div>
+
             </div>
+
         </div>
     </section>
+
+    <!-- CONTACT -->
 
     <section id="contacto">
+
         <h2 class="section-title">Contacto</h2>
+
         <div class="contact-box">
+
             <div class="contact-info">
-                <p><strong>Horarios:</strong> Lunes a Sábado — 10:00 a 20:00 hrs</p>
-                <p><strong>Ubicación:</strong> Av. Principal #123, Santiago</p>
+
+                <p>
+                    <strong>Horarios:</strong>
+                    Lunes a Sábado — 10:00 a 20:00 hrs
+                </p>
+
+                <p>
+                    <strong>Ubicación:</strong>
+                    Av. Principal #123, Santiago
+                </p>
+
             </div>
-            <a href="tel:+56912345678" class="btn">Llamar Ahora</a>
+
+            <a href="tel:+56912345678" class="btn">
+                Llamar Ahora
+            </a>
+
         </div>
     </section>
 
+    <!-- FOOTER -->
+
     <footer>
-        <p>&copy; 2026 Blacklines Barber Shop. Todos los derechos reservados.</p>
+
+        <p>
+            &copy; 2026 Blacklines Barber Shop.
+            Todos los derechos reservados.
+        </p>
+
     </footer>
 
 </body>
